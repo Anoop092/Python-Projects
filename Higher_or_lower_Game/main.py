@@ -40,6 +40,10 @@ while not game_over:
     print(f"Compare B: {questions[1]['name']} ,{questions[1]['description']} from {questions[1]['country']},  {questions[1]['follower_count']}")
     user_input = input("Who has more followers? type 'A' or 'B': ").upper()
     user_answer = set_user_answer(user_input)
+    if user_answer < 0:
+        print(f"You Loose ,  final score {score} is You need to type Character either 'A' or 'B'")
+        print(f"")
+        break
     correct_answer = get_correct_answer(questions)
     if check(user_answer,correct_answer):
         score += 1
